@@ -100,7 +100,7 @@
 	"configurations": {
 		"default": {
 			"cmake":	"",
-			"platforms":	"w10/x86_64-amd/msvc, w10/x86_64-amd/noptmsvc, freertos-linkit/arm32-m4-mt7697-usi/gcc, linux-ubuntu-2004/aarch64-a72-bcm2711-rpi4/gcc, w10/x86_64-amd/mingw32, w10/x86_64-amd/mingw64, netbsd/aarch64BE-bcm2837-a53/gcc, w10/x86_64-amd/wmbedtls-msvc"
+			"platforms":	"w10/x86_64-amd/msvc, w10/x86_64-amd/noptmsvc, freertos-linkit/arm32-m4-mt7697-usi/gcc, linux-ubuntu-2004/aarch64-a72-bcm2711-rpi4/gcc, w10/x86_64-amd/mingw32, w10/x86_64-amd/mingw64, netbsd/aarch64BE-bcm2837-a53/gcc, w10/x86_64-amd/wmbedtlsmsvc"
 		},
 		"esp32-heltec": {
 			"cmake":	"",
@@ -157,7 +157,10 @@
 			"cmake":	"-DLWS_WITH_SECURE_STREAMS=1 -DLWS_WITH_SECURE_STREAMS_PROXY_API=1 -DLWS_WITH_MINIMAL_EXAMPLES=1 -DLWS_WITH_SECURE_STREAMS_AUTH_SIGV4=1",
 			"platforms":	"not w10/x86_64-amd/msvc, netbsd/aarch64BE-bcm2837-a53/gcc"
 		},
-
+		"secure-streams-proxy-metrics": {
+			"cmake":	"-DLWS_WITH_SECURE_STREAMS=1 -DLWS_WITH_SECURE_STREAMS_PROXY_API=1 -DLWS_WITH_MINIMAL_EXAMPLES=1 -DLWS_WITH_SECURE_STREAMS_AUTH_SIGV4=1 -DLWS_WITH_SYS_METRICS=1",
+			"platforms":	"not w10/x86_64-amd/msvc, netbsd/aarch64BE-bcm2837-a53/gcc"
+		},
 		"distro_recommended": { # minimal examples also needed for ctest
 			"cmake":	"-DLWS_WITH_DISTRO_RECOMMENDED=1 -DLWS_WITH_MINIMAL_EXAMPLES=1",
 			"platforms":	"not freebsd-12/x86_64-amd/llvm, not linkit-cross, not w10/x86_64-amd/msvc, linux-ubuntu-2004/aarch64-a72-bcm2711-rpi4/gcc, linux-fedora-32/riscv64-virt/gcc",
